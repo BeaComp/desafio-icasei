@@ -1,0 +1,14 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+  drawer:
+    build: ./mf_drawer
+    ports:
+      - "8080:80"
+  videos:
+    build: ./mf_videos
+    ports:
+      - "8081:80"

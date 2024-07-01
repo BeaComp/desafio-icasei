@@ -1,0 +1,44 @@
+
+:root {
+    --cor-background: #212121; /* cor de fundo padrão */
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--cor-background);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.container {
+    display: flex !important;
+    height: 100% !important;
+    margin-top: 10px;
+}
+
+iframe {
+    border: 1px;
+}
+
+#mf_drawer {
+    height: 100%;
+}
+
+#mf_videos {
+    height: 100%;
+    width: 100%;
+}
+
+#div-mf_drawer {
+    width: 18%;
+    height: 100%;
+}
+
+#div-mf_videos {
+    width: 82%;
+    height: 100%;
+}

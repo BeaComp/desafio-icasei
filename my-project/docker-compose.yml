@@ -1,14 +1,42 @@
-version: '3'
+version: '3.8'
+
 services:
-  backend:
-    build: ./backend
-    ports:
-      - "3000:3000"
-  drawer:
+  mf_drawer:
     build: ./mf_drawer
     ports:
-      - "8080:80"
-  videos:
+      - "8081:80"
+    volumes:
+      - ./mf_drawer:/usr/share/nginx/html
+    networks:
+      - app-network
+
+  mf_videos:
     build: ./mf_videos
     ports:
-      - "8081:80"
+      - "8082:80"
+    volumes:
+      - ./mf_videos:/usr/share/nginx/html
+    networks:
+      - app-network
+
+  main:
+    build: ./main
+    ports:
+      - "8080:80"
+    volumes:
+      - ./main:/usr/share/nginx/html
+    networks:
+      - app-network
+
+  bff:
+    build: ./bff
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./bff:/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

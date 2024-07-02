@@ -10,3 +10,26 @@ window.addEventListener('message', (event) => {
         mfDrawer.postMessage({ favoritesCount: event.data.favoritesCount }, '*');
     }
 });
+
+// Captura o elemento do mf_drawer
+const drawerElement = document.getElementById('div-mf_drawer');
+
+// Função para verificar espaço e aplicar classes responsivas
+function adjustDrawerLayout() {
+    const drawerWidth = drawerElement.offsetWidth;
+    const buttons = drawerElement.querySelectorAll('.round-button');
+
+    const isResponsive = drawerWidth <= 200; // Defina o limite de largura para mudar para responsivo
+
+    buttons.forEach(button => {
+        if (isResponsive) {
+            button.classList.add('responsive-button');
+        } else {
+            button.classList.remove('responsive-button');
+        }
+    });
+}
+
+// Chama a função inicialmente e adiciona um listener para o evento resize
+adjustDrawerLayout();
+window.addEventListener('resize', adjustDrawerLayout);

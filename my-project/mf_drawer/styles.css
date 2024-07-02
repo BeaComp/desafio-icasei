@@ -1,8 +1,11 @@
 /* Definindo variáveis para fontes */
 :root {
-    --fonte-principal: 'Poppins',  sans-serif; /* fonte principal */
-    --fonte-secundaria: 'Roboto', sans-serif; /* fonte secundária */
-    --tamanho-texto: 16px; /* tamanho padrão do texto */
+    --fonte-principal: 'Poppins', sans-serif;
+    /* fonte principal */
+    --fonte-secundaria: 'Roboto', sans-serif;
+    /* fonte secundária */
+    --tamanho-texto: 16px;
+    /* tamanho padrão do texto */
     --cor-vermelha: #ff0000;
     --cor-text: #fff;
     --cor-text-favorites: #212121;
@@ -12,16 +15,25 @@ body {
     height: 100%;
 }
 
-#drawer {
-    width: 100%;
-    height: 100%;
-    border-right: 1px solid #ccc;
-    padding: 10px;
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
 
+.navigation .round-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-button {
-    display: block;
+.icon {
+    display: none;
+}
+
+.navigation button {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
@@ -38,7 +50,7 @@ button {
     transition: all 200ms linear;
 }
 
-button:hover {
+.navigation button:hover {
     background: var(--cor-vermelha);
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
@@ -52,5 +64,76 @@ button:hover {
     background-color: yellow;
     padding: 1px 5px;
     border-radius: 50%;
-    color: var(--cor-text-favorites)
+    color: var(--cor-text-favorites);
+    margin-left: 4px;
+}
+
+@media (max-width: 900px) {
+
+    .responsive-button {
+        width: 60px;
+        height: 60px;
+        font-size: 0;
+        /* Oculta o texto */
+    }
+    
+    .navigation {
+        padding: 10px;
+        border-radius: 50%;
+        width: 50%;
+    }
+
+    .round-button {
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        /* Mudança para coluna */
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        /* Ajuste de tamanho do ícone */
+        position: relative;
+        padding-right: 6px !important;
+        padding-top: 40px !important;
+    }
+
+    #favoritesCount {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        color: white;
+        border-radius: 50%;
+        font-size: 15px;
+        width: 23px;
+        height: 28px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+
+    /* Esconder textos nos botões em dispositivos menores que 768px */
+    .navigation .round-button {
+        width: 60px;
+        height: 60px;
+        font-size: 0;
+        /* Oculta o texto */
+    }
+
+    .web {
+        display: none;
+    }
+
+    .icon {
+        display: block;
+        font-size: 25px !important;
+    }
+
+    .navigation .round-button .icon {
+        font-size: initial;
+        /* Garante que o ícone tenha tamanho normal */
+    }
 }

@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     async function searchVideos(query) {
         const response = await fetch(`http://localhost:3000/api/search?query=${query}`);
-        console.log(response)
         if (!response.ok) {
             throw new Error(`Erro ao buscar vídeos: ${response.statusText}`);
         }

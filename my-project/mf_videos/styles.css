@@ -26,6 +26,8 @@ body {
     display: none;
 }
 
+/*  #########################  ESTILIZAÇÃO DOS CARDS DOS VÍDEOS #########################  */
+
 #videos {
     margin-top: 40px;
     padding: 10px;
@@ -46,13 +48,31 @@ body {
     text-align: center;
     background-color: transparent;
     box-shadow: 0 0 10px #08080885;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.video-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px #080808d1;
+}
+
 
 .video-item iframe {
     width: 100%;
     height: 91%;
     border: 0;
     border-radius: 10px;
+}
+
+iframe.fullscreen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    border: none;
+    background-color: #000;
 }
 
 .favorite-btn {
@@ -73,17 +93,6 @@ body {
 
 .favorite-btn .material-symbols-outlined {
     color: gray;
-}
-
-iframe.fullscreen {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    border: none;
-    background-color: #000; /* Cor de fundo desejada */
 }
 
 /*  #########################  INPUT DE PESQUISA #########################  */
@@ -174,4 +183,35 @@ svg.lupa {
 
 .search-btn:hover {
     background-color: #e6e6e6;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    #video-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    #video-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .input-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    #video-list {
+        grid-template-columns: 1fr;
+    }
+
+    .input-container {
+        width: 300px;
+    }
+
+    #search-form {
+        width: 300px;
+    }
 }

@@ -33,6 +33,7 @@
    mf_videos: http://localhost:8082/
 
 5. Para executar os testes unitários execute: (é necessário que o servidor esteja ativo para os tests)
+   ```sh
    npm test
 
 

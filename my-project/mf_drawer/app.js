@@ -12,14 +12,20 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     if (favorites !== undefined && favorites.length > 0) {
-        const countElement = document.getElementById('favoritesCount');
-        countElement.textContent = favorites.length;
+        const countElementWeb = document.getElementById('favoritesCount-web');
+        const countElementMobile = document.getElementById('favoritesCount-mobile');
+
+        countElementWeb.textContent = favorites.length;
+        countElementMobile.textContent = favorites.length;
     }
 
     window.addEventListener('message', (event) => {
         if (event.data.favoritesCount !== undefined) {
-            const countElement = document.getElementById('favoritesCount');
-            countElement.textContent = event.data.favoritesCount;
+            const countElementWeb = document.getElementById('favoritesCount-web');
+            const countElementMobile = document.getElementById('favoritesCount-mobile');
+
+            countElementWeb.textContent = event.data.favoritesCount;
+            countElementMobile.textContent = event.data.favoritesCount;
         }
     });
 });

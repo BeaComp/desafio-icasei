@@ -11,7 +11,12 @@
     --cor-text-favorites: #212121;
 }
 
+html {
+    width: auto;
+}
+
 body {
+    width: auto;
     height: 100%;
 }
 
@@ -60,15 +65,23 @@ body {
     transition: all 250ms linear;
 }
 
-#favoritesCount {
+#favoritesCount-web {
     background-color: yellow;
-    padding: 1px 5px;
+    padding: 0px 5px;
     border-radius: 50%;
     color: var(--cor-text-favorites);
     margin-left: 4px;
 }
 
-@media (max-width: 900px) {
+#favoritesCount-mobile {
+    background-color: yellow;
+    padding: 0px 5px;
+    border-radius: 50%;
+    color: var(--cor-text-favorites);
+    margin-left: 4px;
+}
+
+@media (max-width: 226px){
 
     .responsive-button {
         width: 60px;
@@ -101,7 +114,7 @@ body {
         padding-top: 40px !important;
     }
 
-    #favoritesCount {
+    #favoritesCount-mobile {
         position: absolute;
         top: -5px;
         right: -5px;

@@ -1,4 +1,4 @@
-window.addEventListener('message', (event) => {
+window.addEventListener('message', function(event) {
     const mfDrawer = document.getElementById('mf_drawer').contentWindow;
     const mfVideos = document.getElementById('mf_videos').contentWindow;
 
@@ -21,7 +21,7 @@ function adjustDrawerLayout() {
 
     const isResponsive = drawerWidth <= 200; // Defina o limite de largura para mudar para responsivo
 
-    buttons.forEach(button => {
+    buttons.forEach(function(button) {
         if (isResponsive) {
             button.classList.add('responsive-button');
         } else {

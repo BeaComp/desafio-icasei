@@ -24,8 +24,7 @@ iframe {
 }
 
 #mf_drawer {
-    position: relative;
-    width: auto;
+    width: 100% !important;
     height: 100%;
 }
 
@@ -35,18 +34,18 @@ iframe {
 }
 
 #div-mf_videos {
-    width: 82%;
+    width: 100%;
     height: auto; /* Ajustado para altura automática */
 }
 
-@media (max-width: 1660px) {
+@media (max-width: 900px) {
     #div-mf_drawer {
-        width: 18%;
+        width: 23%;
         height: 100%;
     }
     
     #div-mf_videos {
-        width: 81%;
+        width: 77%;
         height: 100%;
     }
 }

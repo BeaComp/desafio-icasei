@@ -25,7 +25,3 @@ exports.addFavorite = (req, res) => {
 exports.ListFavorite = (req, res) => {
     res.json(favorites);
 };
-
-exports.removeFavorite = (req, res) => {
-    // Implementar lógica para remover dos favoritos
-};
